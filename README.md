@@ -24,7 +24,9 @@ Cloudflare IP updater for Nginx ngx_http_realip_module
 * Install ngx-cf-ip.php to an appropriate location and give execute permission
 
 	$ cd /usr/local/src/
+
 	$ git clone https://github.com/vkucukcakar/ngx-cf-ip.git	
+
 	$ cp ngx-cf-ip/ngx-cf-ip.php /usr/local/bin/
 	
 * Give execute permission if not cloned from github
@@ -50,9 +52,9 @@ Available options:
  
 ## Examples
 
-	ngx-cf-ip.php -u -r -o "/tmp/cf.conf"
+	$ ngx-cf-ip.php -u -r -o "/tmp/cf.conf"
 
-	ngx-cf-ip.php -u --reload --command="nginx -s reload" --output="/tmp/cf.conf"
+	$ ngx-cf-ip.php -u --reload --command="nginx -s reload" --output="/tmp/cf.conf"
 	
 ## Caveats
 
