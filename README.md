@@ -17,9 +17,9 @@ Cloudflare IP updater for Nginx ngx_http_realip_module
 
 ## Installation
 
-* Install Nginx with ngx_http_realip_module if not installed (OS dependent)
-
 * Install PHP-CLI with openssl extension if not installed (OS dependent)
+
+* Install Nginx with ngx_http_realip_module if not installed (OS dependent)
 
 * Install ngx-cf-ip.php to an appropriate location and give execute permission
 
