@@ -2,11 +2,11 @@
 
 Cloudflare IP updater for Nginx ngx_http_realip_module
 
-* Download Cloudflare IPv4 and IPv6 lists and merge
+* Downloads Cloudflare IPv4 and IPv6 lists and merge
 * IP address and list validation just in case
-* Create a new nginx configuration file using set_real_ip_from directives and IP addresses
+* Creates a new nginx configuration file using set_real_ip_from directives and IP addresses
 * Configuration file ready to be included
-* Reload Nginx
+* Reloads Nginx
 
 
 ## Requirements
