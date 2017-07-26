@@ -244,10 +244,10 @@ class ngx_cf_ip {
 		foreach ($options as $key=>$value) {
 			if (1==strlen($key)) {
 				// Translate short command line options to long ones
-				self::$$stl[$key]=($value<>'') ? $value : true;
+				self::${$stl[$key]}=($value<>'') ? $value : true;
 			} else {
 				// Set class variable using option value or true if option do not accept a value
-				self::$$key=($value<>'') ? $value : true;
+				self::${$key}=($value<>'') ? $value : true;
 			}
 		}
 		// Keep timeout value in a meaningful range
