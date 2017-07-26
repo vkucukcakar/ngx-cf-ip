@@ -26,7 +26,7 @@ class ngx_cf_ip {
 	# Short name
 	private static $app_name="ngx-cf-ip";
 	# Version
-	private static $app_version="1.0.0";
+	private static $app_version="1.0.1";
 	# Description
 	private static $app_description="Cloudflare IP Updater for Nginx ngx_http_realip_module";
 	# PID file
