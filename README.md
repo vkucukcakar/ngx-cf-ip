@@ -62,8 +62,15 @@ Available options:
  
 ## Examples
 
-	$ ngx-cf-ip.php -u -r -o "/tmp/cf.conf"
-	$ ngx-cf-ip.php -u --reload --command="nginx -s reload" --output="/tmp/cf.conf"
+	$ ngx-cf-ip.php -u -r -o "/etc/nginx/cf.conf"
+	$ ngx-cf-ip.php -u --reload --command="nginx -s reload" --output="/etc/nginx/cf.conf"
+
+### Nginx Configuration
+
+	real_ip_header CF-Connecting-IP;
+	real_ip_recursive off;
+	include /etc/nginx/cf.conf;
+
 	
 ## Caveats
 
@@ -71,5 +78,5 @@ Available options:
 
 ## Docker users
 
-* There is also a ready to use Alpine based Docker image for this tool at Docker hub: vkucukcakar/ngx-cf-ip
+* There is also a ready to use Alpine based Docker image for this tool at Docker hub: [vkucukcakar/ngx-cf-ip](https://hub.docker.com/r/vkucukcakar/ngx-cf-ip/ )
 * Of course you can use your own shared cron container if you do not want to use the official Docker image.

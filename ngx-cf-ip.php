@@ -26,7 +26,7 @@ class ngx_cf_ip {
 	# Short name
 	private static $app_name="ngx-cf-ip";
 	# Version
-	private static $app_version="1.0.1";
+	private static $app_version="1.0.2";
 	# Description
 	private static $app_description="Cloudflare IP Updater for Nginx ngx_http_realip_module";
 	# PID file
@@ -113,8 +113,8 @@ class ngx_cf_ip {
 				." -h, --help\n"
 				."     Display help\n"
 				."\nExamples:\n"
-				.self::$app_name.".php -u -r -o \"/tmp/cf.conf\"\n"
-				.self::$app_name.".php -u --reload --command=\"nginx -s reload\" --output=\"/tmp/cf.conf\"\n"
+				."\$ ".self::$app_name.".php -u -r -o \"/tmp/cf.conf\"\n"
+				."\$ ".self::$app_name.".php -u --reload --command=\"nginx -s reload\" --output=\"/tmp/cf.conf\"\n"
 				."\n";
 			exit;
 		} else {
@@ -186,15 +186,15 @@ class ngx_cf_ip {
 			}
 			// Write output file
 			if (false!==file_put_contents(self::$output,$conf_new)) {
-				echo"Updated IP list.\n";
+				echo "Updated IP list.\n";
 			} else {
 				self::error("Error: Output file \"".self::$output."\" could not be written.\n");
 			}
 			// Reload nginx
 			if (self::$reload) {
 				passthru(self::$command, $return_var);
-				if (! $return_var) {
-				    echo"Realod command successfull.\n";
+				if ($return_var===0) {
+				    echo "Realod command successfull.\n";
 				} else {
 				    self::error("Error: Reload command failed.\n");
 				}
@@ -244,10 +244,10 @@ class ngx_cf_ip {
 		foreach ($options as $key=>$value) {
 			if (1==strlen($key)) {
 				// Translate short command line options to long ones
-				self::${$stl[$key]}=($value<>'') ? $value : true;
+				self::${$stl[$key]}=(is_string($value)) ? $value : true;
 			} else {
 				// Set class variable using option value or true if option do not accept a value
-				self::${$key}=($value<>'') ? $value : true;
+				self::${$key}=(is_string($value)) ? $value : true;
 			}
 		}
 		// Keep timeout value in a meaningful range
