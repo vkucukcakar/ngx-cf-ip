@@ -1,3 +1,5 @@
+### This project is deprecated in favor of [ip-list-updater](https://github.com/vkucukcakar/ip-list-updater)
+
 # ngx-cf-ip
 
 Cloudflare IP updater for Nginx ngx_http_realip_module
@@ -24,11 +26,11 @@ Cloudflare IP updater for Nginx ngx_http_realip_module
 * Install ngx-cf-ip.php to an appropriate location and give execute permission
 
 	$ cd /usr/local/src/
-	
+
 	$ git clone https://github.com/vkucukcakar/ngx-cf-ip.git
-	
+
 	$ cp ngx-cf-ip/ngx-cf-ip.php /usr/local/bin/
-	
+
 * Give execute permission if not cloned from github
 
 	$ chmod +x /usr/local/bin/ngx-cf-ip.php
@@ -59,7 +61,7 @@ Available options:
 
 -h, --help                          : Display usage
 
- 
+
 ## Examples
 
 	$ ngx-cf-ip.php -u -r -o "/etc/nginx/cf.conf"
@@ -71,7 +73,7 @@ Available options:
 	real_ip_recursive off;
 	include /etc/nginx/cf.conf;
 
-	
+
 ## Caveats
 
 * Nginx reload command can be platform dependent. That's why there is a --command parameter implemented.
